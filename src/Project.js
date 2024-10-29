@@ -3,6 +3,7 @@ import { format } from "date-fns";
 
 class Project {
   constructor(name, details, createdAt) {
+    this.todos = [];
     this.name = name;
     this.details = details;
     this.createdAt = createdAt;
@@ -30,6 +31,10 @@ class Project {
 
   #setCompletedAt(date) {
     this.completedAt = format(date, DATE_FORMAT);
+  }
+
+  addTodo(todo) {
+    this.todos.push(todo);
   }
 }
 
