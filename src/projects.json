@@ -1,0 +1,180 @@
+[
+  {
+    "name": "Website Redesign",
+    "details": "Redesign the company website for better usability and visual appeal.",
+    "createdAt": "2023-11-01",
+    "completed": false,
+    "todos": [
+      {
+        "title": "Research modern web design trends",
+        "description": "Analyze popular websites for current design patterns and UX best practices.",
+        "priority": 1,
+        "dueDate": "2023-11-05"
+      },
+      {
+        "title": "Choose color scheme",
+        "description": "Decide on a modern, accessible color palette for the redesign.",
+        "priority": 0,
+        "dueDate": "2023-11-07"
+      },
+      {
+        "title": "Create mockups",
+        "description": "Design preliminary mockups for review and feedback.",
+        "priority": 2,
+        "dueDate": "2023-11-10"
+      },
+      {
+        "title": "Client feedback",
+        "description": "Gather feedback from the client on initial mockups.",
+        "priority": 1,
+        "dueDate": null
+      }
+    ]
+  },
+  {
+    "name": "Mobile App Launch",
+    "details": "Prepare for the launch of the new mobile app.",
+    "createdAt": "2023-10-20",
+    "completed": false,
+    "todos": [
+      {
+        "title": "Finalize app features",
+        "description": "Confirm final feature list with the development team.",
+        "priority": 2,
+        "dueDate": "2023-10-25"
+      },
+      {
+        "title": "Marketing campaign planning",
+        "description": "Develop a social media and ad campaign plan.",
+        "priority": 1,
+        "dueDate": "2023-10-30"
+      },
+      {
+        "title": "Create press release",
+        "description": "Write and distribute press release for app launch.",
+        "priority": 1,
+        "dueDate": "2023-11-01"
+      },
+      {
+        "title": "Testing & QA",
+        "description": "Perform final testing and bug fixes.",
+        "priority": 2,
+        "dueDate": "2023-10-28"
+      },
+      {
+        "title": "App store submission",
+        "description": "Submit app for approval on Apple and Google Play stores.",
+        "priority": 2,
+        "dueDate": "2023-10-29"
+      }
+    ]
+  },
+  {
+    "name": "Employee Training Program",
+    "details": "Implement a new training program for employees.",
+    "createdAt": "2023-09-15",
+    "completed": true,
+    "todos": [
+      {
+        "title": "Research training topics",
+        "description": "Identify key areas for employee skill development.",
+        "priority": 1,
+        "dueDate": "2023-09-18"
+      },
+      {
+        "title": "Hire trainers",
+        "description": "Find experienced trainers for selected topics.",
+        "priority": 2,
+        "dueDate": "2023-09-22"
+      },
+      {
+        "title": "Create training schedule",
+        "description": "Outline session timings and participant groups.",
+        "priority": 1,
+        "dueDate": "2023-09-25"
+      },
+      {
+        "title": "Feedback survey",
+        "description": "Gather feedback from employees post-training.",
+        "priority": 0,
+        "dueDate": "2023-09-30"
+      }
+    ]
+  },
+  {
+    "name": "Product Launch",
+    "details": "Launch the new product line for Q4.",
+    "createdAt": "2023-10-01",
+    "completed": false,
+    "todos": [
+      {
+        "title": "Finalize product design",
+        "description": "Confirm all design specifications and materials.",
+        "priority": 2,
+        "dueDate": "2023-10-05"
+      },
+      {
+        "title": "Market research",
+        "description": "Analyze the market trends and consumer feedback.",
+        "priority": 1,
+        "dueDate": "2023-10-03"
+      },
+      {
+        "title": "Set pricing strategy",
+        "description": "Define pricing for each product in the line.",
+        "priority": 2,
+        "dueDate": "2023-10-07"
+      },
+      {
+        "title": "Organize launch event",
+        "description": "Plan and schedule the product launch event.",
+        "priority": 1,
+        "dueDate": "2023-10-10"
+      },
+      {
+        "title": "Social media campaign",
+        "description": "Start social media campaign to generate buzz.",
+        "priority": 1,
+        "dueDate": "2023-10-09"
+      }
+    ]
+  },
+  {
+    "name": "Q4 Financial Audit",
+    "details": "Conduct financial audit for Q4 to prepare for the end-of-year review.",
+    "createdAt": "2023-12-01",
+    "completed": false,
+    "todos": [
+      {
+        "title": "Gather financial statements",
+        "description": "Collect statements from all departments.",
+        "priority": 1,
+        "dueDate": "2023-12-03"
+      },
+      {
+        "title": "Verify account reconciliations",
+        "description": "Check that all accounts are balanced and reconciled.",
+        "priority": 2,
+        "dueDate": "2023-12-05"
+      },
+      {
+        "title": "Audit revenue streams",
+        "description": "Examine all revenue sources for accuracy.",
+        "priority": 2,
+        "dueDate": null
+      },
+      {
+        "title": "Review expense reports",
+        "description": "Ensure all expenses are accounted for and accurate.",
+        "priority": 1,
+        "dueDate": "2023-12-10"
+      },
+      {
+        "title": "Final audit summary",
+        "description": "Compile findings and prepare for presentation.",
+        "priority": 0,
+        "dueDate": "2023-12-12"
+      }
+    ]
+  }
+]
