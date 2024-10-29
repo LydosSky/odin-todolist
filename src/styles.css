@@ -5,13 +5,13 @@ body {
 #content-container {
     height: 100%;
     display: grid;
-    grid-template-columns: 6fr 6fr;
+    grid-template-columns: 3fr 9fr;
 }
 
 #sidebar-container {
     grid-column: 1 / 2;
-    border: 1px solid black;
     height: 100%;
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 #project-list {
@@ -39,4 +39,5 @@ body {
 }
 
 .project .project-card small {
+    font-weight: 300;
 }

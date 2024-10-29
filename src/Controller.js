@@ -43,6 +43,7 @@ const Controller = (function () {
     console.log(projects);
     Ui.initialView();
     listProjects();
+    Ui.displayProject(projects[0]);
   }
 
   return { main };

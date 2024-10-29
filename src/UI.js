@@ -1,16 +1,18 @@
 const contentContainer = document.querySelector("#content-container");
 
 const Ui = (function () {
-  let sidebar, projectView, projectList;
+  let sidebar, projectView, projectList, todoList;
 
   function initialView() {
     sidebar = document.createElement("div");
     projectView = document.createElement("div");
     projectList = document.createElement("ul");
+    todoList = document.createElement("ul");
 
     sidebar.id = "sidebar-container";
     projectView.id = "project-view-container";
     projectList.id = "project-list";
+    todoList.id = "todo-list";
 
     sidebar.appendChild(projectList);
     contentContainer.appendChild(sidebar);
@@ -36,7 +38,36 @@ const Ui = (function () {
     projectList.appendChild(li);
   }
 
-  return { initialView, addProject };
+  function displayProject(project) {
+    const name = document.createElement("h1");
+    const details = document.createElement("p");
+    name.innerText = project.name;
+    details.innerText = project.details;
+
+    projectView.appendChild(name);
+    projectView.appendChild(details);
+    projectView.appendChild(todoList);
+
+    for (let todo of project.todos) {
+      displayTodo(todo);
+    }
+  }
+
+  function displayTodo(todo) {
+    const todoItem = document.createElement("li");
+    todoItem.classList.add("todo");
+    const title = document.createElement("p");
+    const description = document.createElement("p");
+
+    title.innerText = todo.title;
+    description.innerText = todo.description;
+
+    todoItem.appendChild(title);
+    todoItem.appendChild(description);
+    todoList.appendChild(todoItem);
+  }
+
+  return { initialView, addProject, displayProject };
 })();
 
 export default Ui;
