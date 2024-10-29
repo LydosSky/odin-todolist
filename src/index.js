@@ -1,6 +1,7 @@
 import "./styles.css";
 import "./normalize.css";
-import UI from "./UI.js";
+import Controller from "./Controller.js";
+
 export const DATE_FORMAT = "yyyy-MM-dd";
 
-UI.initialView();
+Controller.main();
