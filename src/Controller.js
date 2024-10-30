@@ -33,9 +33,11 @@ const Controller = (function () {
   }
 
   function listProjects() {
-    for (let project of projects) {
-      Ui.addProject(project);
-    }
+    projects.map((project, index) => Ui.addProject(project, index));
+  }
+
+  function getProject(index) {
+    return projects[index];
   }
 
   function main() {
@@ -46,7 +48,7 @@ const Controller = (function () {
     Ui.displayProject(projects[0]);
   }
 
-  return { main };
+  return { main, getProject };
 })();
 
 export default Controller;

@@ -1,7 +1,9 @@
+import Handlers from "./eventHandlers";
+
 const contentContainer = document.querySelector("#content-container");
 
 const Ui = (function () {
-  let sidebar, projectView, projectList, todoList;
+  let sidebar, projectView, projectList, todoList, formModal;
 
   function initialView() {
     sidebar = document.createElement("div");
@@ -19,8 +21,7 @@ const Ui = (function () {
     contentContainer.appendChild(projectView);
   }
 
-  function addProject(project) {
-    const div = document.createElement("div");
+  function addProject(project, index) {
     const li = document.createElement("li");
     const projectTitle = document.createElement("h2");
     const projectDetail = document.createElement("small");
@@ -29,16 +30,17 @@ const Ui = (function () {
     projectDetail.innerText = project.details;
 
     li.classList.add("project");
-
-    li.appendChild(div);
-    div.appendChild(projectTitle);
-    div.appendChild(projectDetail);
-    div.classList.add("project-card");
-
+    li.setAttribute("index", index);
+    li.appendChild(projectTitle);
+    li.appendChild(projectDetail);
+    li.classList.add("project-card");
+    li.addEventListener("click", Handlers.projectCardClick);
     projectList.appendChild(li);
   }
 
   function displayProject(project) {
+    projectView.innerText = "";
+
     const name = document.createElement("h1");
     const details = document.createElement("p");
     const todos = document.createElement("p");
@@ -51,6 +53,7 @@ const Ui = (function () {
     projectView.appendChild(todos);
     projectView.appendChild(todoList);
 
+    todoList.innerText = "";
     for (let todo of project.todos) {
       displayTodo(todo);
     }
@@ -60,21 +63,18 @@ const Ui = (function () {
     const todoItem = document.createElement("li");
     const title = document.createElement("p");
     const description = document.createElement("p");
+    const dueDate = document.createElement("small");
 
     todoItem.classList.add("todo");
     title.innerText = todo.title;
     description.innerText = todo.description;
+    if (todo.dueDate !== null) dueDate.innerText = `Due: ${todo.dueDate}`;
 
     todoItem.appendChild(title);
     todoItem.appendChild(description);
+    todoItem.appendChild(dueDate);
     todoList.appendChild(todoItem);
   }
-
-  function displayForm() {
-    const body = document.querySelector("body");
-  }
-
-  function hideForm() {}
 
   return { initialView, addProject, displayProject };
 })();
