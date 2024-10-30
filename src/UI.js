@@ -3,13 +3,29 @@ import Handlers from "./eventHandlers";
 const contentContainer = document.querySelector("#content-container");
 
 const Ui = (function () {
-  let sidebar, projectView, projectList, todoList, formModal;
+  let sidebar,
+    projectView,
+    projectList,
+    todoList,
+    addTodoButton,
+    addTodoForm,
+    addProjectForm,
+    modalBackground,
+    addProjectButton;
 
   function initialView() {
+    addTodoForm = document.querySelector("#create-todo-modal");
+    addProjectForm = document.querySelector("#create-project-modal");
+    modalBackground = document.querySelector("#modal-background");
     sidebar = document.createElement("div");
     projectView = document.createElement("div");
     projectList = document.createElement("ul");
     todoList = document.createElement("ul");
+    addProjectButton = document.createElement("button");
+
+    addProjectButton.innerText = "Add Project";
+    addProjectButton.id = "add-project";
+    addProjectButton.addEventListener("click", Handlers.displayFormModal);
 
     sidebar.id = "sidebar-container";
     projectView.id = "project-view-container";
@@ -19,6 +35,9 @@ const Ui = (function () {
     sidebar.appendChild(projectList);
     contentContainer.appendChild(sidebar);
     contentContainer.appendChild(projectView);
+
+    sidebar.appendChild(addProjectButton);
+    modalBackground.addEventListener("click", Handlers.closeFormModal);
   }
 
   function addProject(project, index) {
@@ -41,12 +60,15 @@ const Ui = (function () {
   function displayProject(project) {
     projectView.innerText = "";
 
+    addTodoButton = document.createElement("button");
     const name = document.createElement("h1");
     const details = document.createElement("p");
     const todos = document.createElement("p");
     name.innerText = project.name;
     details.innerText = project.details;
     todos.innerText = "Todos: ";
+    addTodoButton.innerText = "Add Todo";
+    addTodoButton.id = "add-todo";
 
     projectView.appendChild(name);
     projectView.appendChild(details);
@@ -57,6 +79,9 @@ const Ui = (function () {
     for (let todo of project.todos) {
       displayTodo(todo);
     }
+
+    projectView.appendChild(addTodoButton);
+    addTodoButton.addEventListener("click", Handlers.displayFormModal);
   }
 
   function displayTodo(todo) {
@@ -76,7 +101,18 @@ const Ui = (function () {
     todoList.appendChild(todoItem);
   }
 
-  return { initialView, addProject, displayProject };
+  function toggleDisplayForm(elementId) {
+    if (elementId === "add-todo") {
+      addTodoForm.classList.toggle("display-none");
+      modalBackground.setAttribute("form-name", "add-todo");
+    } else if (elementId == "add-project") {
+      addProjectForm.classList.toggle("display-none");
+      modalBackground.setAttribute("form-name", "add-project");
+    }
+    modalBackground.classList.toggle("display-none");
+  }
+
+  return { initialView, addProject, displayProject, toggleDisplayForm };
 })();
 
 export default Ui;

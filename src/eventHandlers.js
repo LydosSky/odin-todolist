@@ -18,7 +18,25 @@ const Handlers = (function () {
     return;
   }
 
-  return { projectCardClick };
+  function displayFormModal(event) {
+    const element = event.target;
+    switch (element.id) {
+      case "add-todo":
+      case "add-project":
+        UI.toggleDisplayForm(element.id);
+      default:
+        return;
+    }
+  }
+
+  function closeFormModal(event) {
+    const element = event.target;
+    const elementId = element.getAttribute("form-name");
+
+    if (element.id === "modal-background") UI.toggleDisplayForm(elementId);
+  }
+
+  return { projectCardClick, displayFormModal, closeFormModal };
 })();
 
 export default Handlers;
