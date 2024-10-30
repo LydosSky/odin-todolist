@@ -32,6 +32,7 @@ body {
     gap: 0.5rem;
     justify-content: center;
     padding-left: 2rem;
+    cursor: pointer;
 }
 
 .project-card h2 {
@@ -40,4 +41,25 @@ body {
 
 .project .project-card small {
     font-weight: 300;
+}
+
+#project-view-container {
+    padding: 2rem;
+}
+
+#project-view-container h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+#project-view-container > p {
+    margin-bottom: 2rem;
+}
+
+#project-view-container #todo-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
 }

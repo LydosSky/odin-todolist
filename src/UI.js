@@ -41,11 +41,14 @@ const Ui = (function () {
   function displayProject(project) {
     const name = document.createElement("h1");
     const details = document.createElement("p");
+    const todos = document.createElement("p");
     name.innerText = project.name;
     details.innerText = project.details;
+    todos.innerText = "Todos: ";
 
     projectView.appendChild(name);
     projectView.appendChild(details);
+    projectView.appendChild(todos);
     projectView.appendChild(todoList);
 
     for (let todo of project.todos) {
@@ -55,10 +58,10 @@ const Ui = (function () {
 
   function displayTodo(todo) {
     const todoItem = document.createElement("li");
-    todoItem.classList.add("todo");
     const title = document.createElement("p");
     const description = document.createElement("p");
 
+    todoItem.classList.add("todo");
     title.innerText = todo.title;
     description.innerText = todo.description;
 
@@ -66,6 +69,12 @@ const Ui = (function () {
     todoItem.appendChild(description);
     todoList.appendChild(todoItem);
   }
+
+  function displayForm() {
+    const body = document.querySelector("body");
+  }
+
+  function hideForm() {}
 
   return { initialView, addProject, displayProject };
 })();
