@@ -6,8 +6,46 @@
     <title>Projects</title>
   </head>
   <body>
-    <div id="content-container">
+    <div id="content-container"></div>
 
+    <div id="modal-background"></div>
+    <div id="create-project-modal">
+      <h2>Create Project</h2>
+      <form action="/submit-project" method="POST">
+        <div>
+          <label for="name">Project Name:</label><br />
+          <input type="text" id="name" name="name" required />
+        </div>
+        <br />
+
+        <div>
+          <label for="details">Project Details:</label><br />
+          <textarea
+            id="details"
+            name="details"
+            rows="4"
+            cols="50"
+            required
+          ></textarea>
+        </div>
+        <br />
+
+        <div>
+          <label for="createdAt">Creation Date:</label><br />
+          <input type="date" id="createdAt" name="createdAt" required />
+        </div>
+        <br />
+
+        <div>
+          <label for="completed">Completed:</label><br />
+          <input type="checkbox" id="completed" name="completed" />
+        </div>
+        <br />
+
+        <div>
+          <button type="submit">Submit Project</button>
+        </div>
+      </form>
     </div>
   </body>
 </html>
